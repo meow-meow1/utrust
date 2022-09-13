@@ -18,7 +18,7 @@ How would you test the same scenario on different screen sizes?
 3. Depending on the project details we might also break our e2e test into smaller chunks (e.g. more it-s)
 4. We might also add more comments/blocks of text for test cases if we have juniors working on our tests as well
 5. We would also need to implement different envs handling (with e.g. cyenv or .env)
-6. I didn't feel comfortable hardcoding the instance URL in my repo (even though it's publicly available) but feel free to correct me if I'm wrong
+6. I didn't feel comfortable hardcoding the instance URL in my repo (even though it's publicly available) but feel free let me know and I will add it right in for your convenience
 
 
 ### Installation
