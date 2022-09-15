@@ -1,7 +1,7 @@
 import BasePage from '../pages/BasePage'
 
 export default class PaymentsPage extends BasePage {
-    static invoiceSubsection() {
+    static clickInvoiceSubsectionSideMenu() {
         cy.get('[href="/payments/invoices"]').click()
     }
 
@@ -13,7 +13,7 @@ export default class PaymentsPage extends BasePage {
         cy.get('[data-test="checkbox-sendIssuedEmail"]').should('be.checked')
     }
 
-    static confirmGenerateNewInvoice() {
+    static clickConfirmGenerateNewInvoice() {
         cy.get('[data-test="generate-invoice-button"]').click();
         cy.get('[data-test="submit-new-invoice-button"]').click();
     }
@@ -68,7 +68,7 @@ export default class PaymentsPage extends BasePage {
         return `${dt.getFullYear()}`
     }
 
-    static verifyInvoiceReceipt() {
+    static clickVerifyInvoiceReceipt() {
         cy.get('[data-test="invoice-sent-ok"]').click()
 
 
@@ -76,8 +76,6 @@ export default class PaymentsPage extends BasePage {
             cy.get('[data-test="Customer name"]').children('span').should('have.text', data.name)
             cy.get('#totalAmount').children('span').should('have.text', `Total amount${data.currency.split(' ')[0]} ${data.amount}`)
             cy.get('[data-test="Description "]').children('span').should('have.text', data.description)
-
-
         })
     }
 

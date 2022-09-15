@@ -9,13 +9,6 @@ Cypress.Commands.add('isHidden', selector => {
     cy.get(selector).should('not.exist');
 })
 
-Cypress.Commands.add('logIn', (username, password) => {
-    cy.contains('Sign in').should('be.visible');
-    cy.get('#email').type(username)
-    cy.get('#password').type(password)
-    cy.get('#progress-status').click();
-})
-
 Cypress.Commands.add('setResolution', size => {
     if (Cypress._.isArray(size)) {
         cy.viewport(size[0], size[1])
@@ -27,7 +20,6 @@ Cypress.Commands.add('setResolution', size => {
 // TODO: add API login funciton
 Cypress.Commands.add('logInWithApi', (username, password) => {
 })
-
 
 // set your api key with an environment variable `CYPRESS_API_KEY` or configure using `env` property in config file
 const mailslurp = new MailSlurp({apiKey});
